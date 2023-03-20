@@ -1,0 +1,15 @@
+<div style="
+        background-color: #666666; 
+        position: fixed; 
+        padding: 1vw;
+        top: 0px; 
+        left: 0px; 
+        width: 100vw; 
+        height: 8vh">
+    <h1 id="minerva-header-title" style="display: inline; padding: auto;">Minerva</h1>
+    <div *ngFor="let item of navbarItems" style="display: inline; padding: 1vw;">
+        <span (click)="showPageInConatiner(item.url)" style="text-decoration: none; color: white;">
+            {{item.title}}
+        </span>
+    </div>
+</div>

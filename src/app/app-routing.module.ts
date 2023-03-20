@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HeaderNavbarComponent } from './header-navbar/header-navbar.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:"/steSearch", component: HeaderNavbarComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

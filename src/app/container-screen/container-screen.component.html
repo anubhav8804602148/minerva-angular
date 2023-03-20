@@ -1,0 +1,15 @@
+<div style="
+        background-color: blue;
+        position: fixed; 
+        padding: 1vw;
+        top: 8vh; 
+        left: 0px; 
+        width: 100vw; 
+        height: 90vh">
+    <div [ngSwitch]="selectedScreen">
+        <div *ngSwitchCase="'site-search'"><app-site-search></app-site-search></div>
+        <div *ngSwitchCase="'rfds-service'"><app-rfds-service></app-rfds-service></div>
+        <div *ngSwitchCase="'document-admin'"><app-document-admin></app-document-admin></div>
+        <div *ngSwitchCase="'plumbing-config'"><app-plumbing-config></app-plumbing-config></div>
+    </div>
+</div>
