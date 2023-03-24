@@ -7,6 +7,7 @@ import {NavigationService} from 'src/app/navigation.service'
   styleUrls: ['./header-navbar.component.less']
 })
 export class HeaderNavbarComponent {
+  currentPath: string = "site-search";
   navbarItems = [
     {
       "url": "/siteSearch",
@@ -26,6 +27,7 @@ export class HeaderNavbarComponent {
   ];
   constructor(private navigationService: NavigationService){}
   showPageInConatiner(targetPage : string) :void{
+    this.currentPath = targetPage;
     this.navigationService.setCurrentPath(targetPage);
   }
 }

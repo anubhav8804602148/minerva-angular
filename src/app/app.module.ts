@@ -12,6 +12,8 @@ import { PlumbingConfigComponent } from './plumbing-config/plumbing-config.compo
 import { NgSelectModule } from '@ng-select/ng-select'; 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RegionMapComponent } from './region-map/region-map.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   declarations: [
@@ -21,14 +23,16 @@ import { HttpClientModule } from '@angular/common/http';
     SiteSearchComponent,
     RfdsServiceComponent,
     DocumentAdminComponent,
-    PlumbingConfigComponent
+    PlumbingConfigComponent,
+    RegionMapComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgSelectModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    LeafletModule
   ],
   providers: [],
   bootstrap: [AppComponent]

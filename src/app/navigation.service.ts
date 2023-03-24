@@ -12,7 +12,6 @@ export class NavigationService {
   }
   
   getCurrentPath(): Observable<any>{
-    console.log(this.activePage);
     return this.activePage.asObservable();
   }
 }

@@ -72,5 +72,12 @@
                 </ng-template>
             </ng-select>
         </div>
+        <div class="inputFieldButton">
+            <button (click)="updateSelectedRegions()" id="updateSelectedRegionButton">Search</button>
+        </div>
+        <div class="inputFieldButton">
+            <button (click)="resetInputFields()" id="resetSelectedRegionButton">Reset</button>
+        </div>
     </div>
+    <app-region-map></app-region-map>
 </div>

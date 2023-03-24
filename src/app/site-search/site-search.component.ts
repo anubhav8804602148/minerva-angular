@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http'
+import { MapLoaderService } from '../map-loader.service';
 
 @Component({
   selector: 'app-site-search',
@@ -17,13 +18,15 @@ export class SiteSearchComponent implements OnInit{
   selectedContinents: number[] = [];
   selectedCountries: number[] = [];
   selectedRegions: number[] = [];
+  mapLoaderService: MapLoaderService;
   
-  constructor(http: HttpClient){
+  constructor(http: HttpClient, mapLoaderService: MapLoaderService){
     this.http = http;
     this.territories = [];
     this.continents = [];
     this.countries = [];
     this.regions = [];
+    this.mapLoaderService = mapLoaderService;
   }
 
   onTerritoriesDropdownChange(event: Event){
@@ -54,6 +57,20 @@ export class SiteSearchComponent implements OnInit{
   onRegionsDropdownChange(event: Event){
   }
 
+  updateSelectedRegions(){
+    this.selectedRegions && this.mapLoaderService.setSelectedRegions(
+      this.regions
+        .filter(region => this.selectedRegions.includes(region.id))
+        .map(region => region.name)
+    );
+  }
+  resetInputFields(){
+    this.selectedTerritories = [];
+    this.selectedContinents = [];
+    this.selectedCountries = [];
+    this.selectedRegions = [];
+    this.updateSelectedRegions();
+  }
   ngOnInit(){
     this.http.get(this.baseUrl+"/siteSearch/fetchRegionDataMap")
     .subscribe(
