@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {NavigationService} from 'src/app/navigation.service'
 
 @Component({
   selector: 'app-header-navbar',
@@ -9,18 +10,22 @@ export class HeaderNavbarComponent {
   navbarItems = [
     {
       "url": "/siteSearch",
-      "title": "Site Search"
+      "title": "Site Search",
+      "name": "site-search"
     },
     {
       "url": "/documentAdmin",
-      "title": "Document Admin"
+      "title": "Document Admin",
+      "name": "document-admin"
     },
     {
       "url": "/plumbingConfig",
-      "title": "Plumbing Config"
+      "title": "Plumbing Config",
+      "name": "plumbing-config"
     },
   ];
-  showPageInConatiner = function(targetPage : string){
-    
+  constructor(private navigationService: NavigationService){}
+  showPageInConatiner(targetPage : string) :void{
+    this.navigationService.setCurrentPath(targetPage);
   }
 }

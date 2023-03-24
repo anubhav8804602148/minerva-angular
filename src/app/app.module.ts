@@ -9,6 +9,9 @@ import { SiteSearchComponent } from './site-search/site-search.component';
 import { RfdsServiceComponent } from './rfds-service/rfds-service.component';
 import { DocumentAdminComponent } from './document-admin/document-admin.component';
 import { PlumbingConfigComponent } from './plumbing-config/plumbing-config.component';
+import { NgSelectModule } from '@ng-select/ng-select'; 
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { PlumbingConfigComponent } from './plumbing-config/plumbing-config.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgSelectModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

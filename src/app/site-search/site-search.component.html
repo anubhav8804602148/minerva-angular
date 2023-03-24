@@ -1,1 +1,76 @@
-<p>site-search works!</p>
+<div id="siteSearchContentScreen">
+    <div class="allInputFields">
+        <div class="inputField">
+            <label class="inputFieldLabel">Territory</label>
+            <ng-select [items]="territories"
+                bindLabel="name"
+                bindValue="id"
+                [multiple]="true"
+                appendTo="body"
+                [clearable]="true"
+                [searchable]="true"
+                [(ngModel)]="selectedTerritories"
+                (change)="onTerritoriesDropdownChange($event)"
+                placeholder="Select Territory"
+                id="territoryDropdown">
+                <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+                    {{items.length}} Selected
+                </ng-template>
+            </ng-select>
+        </div>
+        <div class="inputField">
+            <label class="inputFieldLabel">Continent</label>
+            <ng-select [items]="continents"
+                bindLabel="name"
+                bindValue="id"
+                [multiple]="true"
+                appendTo="body"
+                [clearable]="true"
+                [searchable]="true"
+                [(ngModel)]="selectedContinents"
+                (change)="onContinentsDropdownChange($event)"
+                placeholder="Select Continent"
+                id="continentDropdown">
+                <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+                    {{items.length}} Selected
+                </ng-template>
+            </ng-select>
+        </div>
+        <div class="inputField">
+            <label class="inputFieldLabel">Country</label>
+            <ng-select [items]="countries"
+                bindLabel="name"
+                bindValue="id"
+                [multiple]="true"
+                appendTo="body"
+                [clearable]="true"
+                [searchable]="true"
+                [(ngModel)]="selectedCountries"
+                (change)="onCountriesDropdownChange($event)"
+                placeholder="Select Country"
+                id="countryDropdown">
+                <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+                    {{items.length}} Selected
+                </ng-template>
+            </ng-select>
+        </div>
+        <div class="inputField">
+            <label class="inputFieldLabel">Region</label>
+            <ng-select [items]="regions"
+                bindLabel="name"
+                bindValue="id"
+                [multiple]="true"
+                appendTo="body"
+                [clearable]="true"
+                [searchable]="true"
+                [(ngModel)]="selectedRegions"
+                (change)="onRegionsDropdownChange($event)"
+                placeholder="Select Territory"
+                id="regionDropdown">
+                <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+                    {{items.length}} Selected
+                </ng-template>
+            </ng-select>
+        </div>
+    </div>
+</div>

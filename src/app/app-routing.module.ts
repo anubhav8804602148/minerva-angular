@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeaderNavbarComponent } from './header-navbar/header-navbar.component';
 
 const routes: Routes = [
-  {path:"/steSearch", component: HeaderNavbarComponent}
+  {path:"siteSearch", component: HeaderNavbarComponent}
 ];
 
 @NgModule({
