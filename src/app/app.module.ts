@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegionMapComponent } from './region-map/region-map.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { MessageBannerComponent } from './message-banner/message-banner.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     RfdsServiceComponent,
     DocumentAdminComponent,
     PlumbingConfigComponent,
-    RegionMapComponent
+    RegionMapComponent,
+    MessageBannerComponent
   ],
   imports: [
     BrowserModule,
