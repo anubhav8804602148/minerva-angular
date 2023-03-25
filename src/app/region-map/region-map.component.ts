@@ -36,7 +36,8 @@ export class RegionMapComponent implements OnDestroy{
     );
   }
   getLatLong(region: Region) : L.LatLngTuple{
-    return [region.latitude || 0, region.longitude || 0] as L.LatLngTuple;
+    if(region) return [region.latitude || 0, region.longitude || 0] as L.LatLngTuple;
+    return [0, 0] as L.LatLngTuple;
   }
 
   minervaRegionMapClicked(event: Event){

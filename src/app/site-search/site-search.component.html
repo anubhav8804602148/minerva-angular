@@ -13,6 +13,12 @@
                 (change)="onTerritoriesDropdownChange($event)"
                 placeholder="Select Territory"
                 id="territoryDropdown">
+                <ng-template ng-header-tmp>
+                    <div>
+                      <button class="dropdown-internal-button" (click)="selectAllOptions('territory')">Select All</button>
+                      <button class="dropdown-internal-button" (click)="clearAllOptions('territory')">Clear All</button>
+                    </div>
+                </ng-template>
                 <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
                     {{items.length}} Selected
                 </ng-template>
@@ -31,6 +37,12 @@
                 (change)="onContinentsDropdownChange($event)"
                 placeholder="Select Continent"
                 id="continentDropdown">
+                <ng-template ng-header-tmp>
+                    <div>
+                      <button class="dropdown-internal-button" (click)="selectAllOptions('continent')">Select All</button>
+                      <button class="dropdown-internal-button" (click)="clearAllOptions('continent')">Clear All</button>
+                    </div>
+                </ng-template>
                 <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
                     {{items.length}} Selected
                 </ng-template>
@@ -49,6 +61,12 @@
                 (change)="onCountriesDropdownChange($event)"
                 placeholder="Select Country"
                 id="countryDropdown">
+                <ng-template ng-header-tmp>
+                    <div>
+                      <button class="dropdown-internal-button" (click)="selectAllOptions('country')">Select All</button>
+                      <button class="dropdown-internal-button" (click)="clearAllOptions('country')">Clear All</button>
+                    </div>
+                </ng-template>
                 <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
                     {{items.length}} Selected
                 </ng-template>
@@ -67,17 +85,22 @@
                 (change)="onRegionsDropdownChange($event)"
                 placeholder="Select Territory"
                 id="regionDropdown">
+                <ng-template ng-header-tmp>
+                    <div>
+                      <button class="dropdown-internal-button" (click)="selectAllOptions('region')">Select All</button>
+                      <button class="dropdown-internal-button" (click)="clearAllOptions('region')">Clear All</button>
+                    </div>
+                </ng-template>
                 <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
                     {{items.length}} Selected
                 </ng-template>
             </ng-select>
         </div>
         <div class="inputFieldButton">
-            <button (click)="updateSelectedRegions()" id="updateSelectedRegionButton">Search</button>
-        </div>
-        <div class="inputFieldButton">
+            <button (click)="updateSelectedRegions(true)" id="updateSelectedRegionButton">Search</button>
             <button (click)="resetInputFields()" id="resetSelectedRegionButton">Reset</button>
         </div>
     </div>
     <app-region-map></app-region-map>
+    <app-message-banner></app-message-banner>
 </div>

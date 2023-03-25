@@ -34,7 +34,8 @@ import { MessageBannerComponent } from './message-banner/message-banner.componen
     NgSelectModule,
     FormsModule,
     HttpClientModule,
-    LeafletModule
+    LeafletModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
